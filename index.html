@@ -6,37 +6,51 @@
 <title>Faiza Hanif - Software Developer</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0e1a; color: #e6e6e6; line-height: 1.7; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0e1a; color: #e6e6e6; line-height: 1.7; }
   .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  
   .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a1f3a, #0a0e1a); border-radius: 16px; margin-bottom: 30px; border: 1px solid #1f2545; }
-  .hero h1 { font-size: 42px; color: #ffffff; margin-bottom: 10px; }
-  .hero p { font-size: 18px; color: #7f8cff; }
+  .avatar { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #7f8cff; margin-bottom: 20px; object-fit: cover; }
+  .hero h1 { font-size: 42px; color: #ffffff; margin-bottom: 10px; font-weight: 700; }
+  .hero p { font-size: 18px; color: #7f8cff; margin-bottom: 25px; font-weight: 500; }
+  .btn-hero { padding: 14px 32px; background: #7f8cff; color: #0a0e1a; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px; transition: 0.3s; display: inline-block; }
+  .btn-hero:hover { background: #a0aaff; transform: translateY(-2px); }
+  
   .section { background: #111528; padding: 30px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #1f2545; }
-  .section h2 { color: #7f8cff; margin-bottom: 15px; font-size: 24px; border-bottom: 2px solid #1f2545; padding-bottom: 8px; }
+  .section h2 { color: #7f8cff; margin-bottom: 15px; font-size: 24px; border-bottom: 2px solid #1f2545; padding-bottom: 8px; font-weight: 600; }
   .section p { color: #c9c9c9; margin-bottom: 10px; }
-  .section h3 { color: #ffffff; margin-bottom: 8px; font-size: 20px; }
+  .section h3 { color: #ffffff; margin-bottom: 8px; font-size: 20px; font-weight: 600; }
+  
   .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
   .btn { display: inline-block; padding: 12px 24px; background: #7f8cff; color: #0a0e1a; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s; }
   .btn:hover { background: #a0aaff; transform: translateY(-2px); }
   .btn-outline { background: transparent; color: #7f8cff; border: 2px solid #7f8cff; }
   .btn-outline:hover { background: #7f8cff; color: #0a0e1a; }
-  .skills span { display: inline-block; background: #1f2545; padding: 8px 16px; border-radius: 20px; margin: 5px; font-size: 14px; color: #a0aaff; }
+  
+  .skills span { display: inline-block; background: #1f2545; padding: 8px 16px; border-radius: 20px; margin: 5px; font-size: 14px; color: #a0aaff; font-weight: 500; }
+  
   footer { text-align: center; padding: 30px; color: #555; font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="container">
 
+  <!-- HERO SECTION -->
   <div class="hero">
+    <!-- YAHAN APNI PHOTO YA AVATAR KA NAAM LIKHEIN (jaise profile.png) -->
+    <img src="profile.png" alt="Faiza Hanif" class="avatar">
     <h1>Faiza Hanif</h1>
     <p>Software Developer | Python &amp; JavaScript</p>
+    <a href="mailto:faizahanif192@gmail.com" class="btn-hero">Hire Me</a>
   </div>
 
+  <!-- ABOUT SECTION -->
   <div class="section">
     <h2>About Me</h2>
     <p>Hi, I'm Faiza, a software developer specializing in Python, JavaScript, and Streamlit. I build custom automation tools and data dashboards. My recent project is an Industrial Risk Management Dashboard built with PostgreSQL. I am also an active freelancer on Zinn Hub and Fiverr.</p>
   </div>
 
+  <!-- SKILLS SECTION -->
   <div class="section">
     <h2>Skills</h2>
     <div class="skills">
@@ -44,6 +58,7 @@
     </div>
   </div>
 
+  <!-- PROJECT 1 -->
   <div class="section">
     <h2>Featured Project 1</h2>
     <h3>Industrial Decision Intelligence &amp; Risk Management System</h3>
@@ -54,6 +69,7 @@
     </div>
   </div>
 
+  <!-- PROJECT 2 -->
   <div class="section">
     <h2>Featured Project 2</h2>
     <h3>Academic &amp; Database Projects</h3>
@@ -64,6 +80,7 @@
     </div>
   </div>
 
+  <!-- CONNECT SECTION -->
   <div class="section">
     <h2>Connect With Me</h2>
     <p>I'm available for freelance projects and open to collaborations. Feel free to reach out!</p>
