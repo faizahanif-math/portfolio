@@ -4,96 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faiza Hanif - Software Developer</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0e1a; color: #e6e6e6; line-height: 1.7; }
-  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  body { font-family: 'Poppins', sans-serif; background: #0a0e1a; color: #e6e6e6; line-height: 1.7; scroll-behavior: smooth; }
   
-  .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a1f3a, #0a0e1a); border-radius: 16px; margin-bottom: 30px; border: 1px solid #1f2545; }
-  .avatar { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #7f8cff; margin-bottom: 20px; object-fit: cover; }
+  /* Navbar */
+  nav { position: fixed; top: 0; width: 100%; background: rgba(10, 14, 26, 0.95); backdrop-filter: blur(10px); padding: 15px 0; z-index: 1000; border-bottom: 1px solid #1f2545; text-align: center; }
+  nav a { color: #e6e6e6; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 14px; transition: 0.3s; }
+  nav a:hover { color: #7f8cff; }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 100px 20px 40px; }
+  
+  /* Hero Section */
+  .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1a1f3a, #0a0e1a); border-radius: 16px; margin-bottom: 40px; border: 1px solid #1f2545; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .avatar { width: 130px; height: 130px; border-radius: 50%; border: 4px solid #7f8cff; margin-bottom: 20px; object-fit: cover; box-shadow: 0 0 20px rgba(127, 140, 255, 0.4); }
   .hero h1 { font-size: 42px; color: #ffffff; margin-bottom: 10px; font-weight: 700; }
-  .hero p { font-size: 18px; color: #7f8cff; margin-bottom: 25px; font-weight: 500; }
-  .btn-hero { padding: 14px 32px; background: #7f8cff; color: #0a0e1a; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px; transition: 0.3s; display: inline-block; }
-  .btn-hero:hover { background: #a0aaff; transform: translateY(-2px); }
+  .hero p { font-size: 18px; color: #7f8cff; margin-bottom: 20px; font-weight: 400; }
   
-  .section { background: #111528; padding: 30px; border-radius: 12px; margin-bottom: 25px; border: 1px solid #1f2545; }
-  .section h2 { color: #7f8cff; margin-bottom: 15px; font-size: 24px; border-bottom: 2px solid #1f2545; padding-bottom: 8px; font-weight: 600; }
-  .section p { color: #c9c9c9; margin-bottom: 10px; }
-  .section h3 { color: #ffffff; margin-bottom: 8px; font-size: 20px; font-weight: 600; }
+  /* Sections */
+  .section { margin-bottom: 40px; }
+  .section h2 { color: #ffffff; font-size: 28px; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; }
+  .section h2::after { content: ""; flex: 1; height: 1px; background: #1f2545; margin-left: 20px; }
   
-  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
-  .btn { display: inline-block; padding: 12px 24px; background: #7f8cff; color: #0a0e1a; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s; }
-  .btn:hover { background: #a0aaff; transform: translateY(-2px); }
+  /* About */
+  .about-text { background: #111528; padding: 30px; border-radius: 12px; border: 1px solid #1f2545; color: #c9c9c9; }
+  
+  /* Skills */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skills-grid span { background: #1f2545; padding: 10px 20px; border-radius: 8px; font-size: 14px; color: #a0aaff; font-weight: 600; border: 1px solid #2a3360; transition: 0.3s; }
+  .skills-grid span:hover { background: #7f8cff; color: #0a0e1a; transform: translateY(-3px); }
+
+  /* Projects */
+  .project-card { background: #111528; padding: 30px; border-radius: 12px; border: 1px solid #1f2545; margin-bottom: 20px; transition: 0.3s; }
+  .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); border-color: #7f8cff; }
+  .project-card h3 { color: #ffffff; margin-bottom: 10px; font-size: 22px; }
+  .project-card p { color: #c9c9c9; margin-bottom: 15px; font-size: 15px; }
+  .tech-stack { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tech-stack span { background: #0a0e1a; color: #7f8cff; padding: 4px 12px; border-radius: 4px; font-size: 12px; border: 1px solid #1f2545; font-weight: 600; }
+  
+  /* Buttons */
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { padding: 10px 20px; background: #7f8cff; color: #0a0e1a; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: 0.3s; }
+  .btn:hover { background: #a0aaff; }
   .btn-outline { background: transparent; color: #7f8cff; border: 2px solid #7f8cff; }
   .btn-outline:hover { background: #7f8cff; color: #0a0e1a; }
-  
-  .skills span { display: inline-block; background: #1f2545; padding: 8px 16px; border-radius: 20px; margin: 5px; font-size: 14px; color: #a0aaff; font-weight: 500; }
-  
-  footer { text-align: center; padding: 30px; color: #555; font-size: 14px; }
+
+  /* Connect */
+  .connect-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+
+  footer { text-align: center; padding: 30px; color: #555; font-size: 14px; border-top: 1px solid #1f2545; margin-top: 40px; }
 </style>
 </head>
 <body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Connect</a>
+</nav>
+
 <div class="container">
 
   <!-- HERO SECTION -->
-  <div class="hero">
-    <!-- YAHAN APNI PHOTO YA AVATAR KA NAAM LIKHEIN (jaise profile.png) -->
+  <div class="hero" id="home">
+    <!-- Agar aapke paas profile.png nahi hai to is line ko delete kar dein -->
     <img src="profile.png" alt="Faiza Hanif" class="avatar">
     <h1>Faiza Hanif</h1>
     <p>Software Developer | Python &amp; JavaScript</p>
   </div>
 
   <!-- ABOUT SECTION -->
-  <div class="section">
+  <div class="section" id="about">
     <h2>About Me</h2>
-    <p>Hi, I'm Faiza, a software developer specializing in Python, JavaScript, and Streamlit. I build custom automation tools and data dashboards. My recent project is an Industrial Risk Management Dashboard built with PostgreSQL. I am also an active freelancer on Zinn Hub and Fiverr.</p>
+    <div class="about-text">
+      <p>Hi, I'm Faiza, a software developer specializing in Python, JavaScript, and Streamlit. I build custom automation tools and data dashboards. My recent project is an Industrial Risk Management Dashboard built with PostgreSQL. I am also an active freelancer on Zinn Hub and Fiverr.</p>
+    </div>
   </div>
 
   <!-- SKILLS SECTION -->
-  <div class="section">
+  <div class="section" id="skills">
     <h2>Skills</h2>
-    <div class="skills">
+    <div class="skills-grid">
       <span>Python</span><span>JavaScript</span><span>Streamlit</span><span>PostgreSQL</span><span>HTML &amp; CSS</span><span>Bug Fixing</span><span>Automation</span><span>Pandas</span><span>DBMS</span>
     </div>
   </div>
 
-  <!-- PROJECT 1 -->
-  <div class="section">
-    <h2>Featured Project 1</h2>
-    <h3>Industrial Decision Intelligence &amp; Risk Management System</h3>
-    <p>A full-stack Python and PostgreSQL dashboard that tracks 5 types of factory risks: inventory, supplier reliability, production shortfalls, delivery delays, and cost increases. Features include Excel bulk upload, role-based login, and automated PDF/Excel reports.</p>
-    <div class="buttons">
-      <a href="https://faiza-industrial-dashboard.streamlit.app" class="btn" target="_blank">Live Demo</a>
-      <a href="https://youtu.be/EAoNXmUdILg" class="btn btn-outline" target="_blank">Watch Video</a>
+  <!-- PROJECTS SECTION -->
+  <div class="section" id="projects">
+    <h2>Featured Projects</h2>
+    
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Industrial Risk Management System</h3>
+      <p>A full-stack Python and PostgreSQL dashboard that tracks 5 types of factory risks: inventory, supplier reliability, production shortfalls, delivery delays, and cost increases. Features include Excel bulk upload, role-based login, and automated reports.</p>
+      <div class="tech-stack">
+        <span>Python</span><span>Streamlit</span><span>PostgreSQL</span><span>Pandas</span>
+      </div>
+      <div class="buttons">
+        <a href="https://faiza-industrial-dashboard.streamlit.app" class="btn" target="_blank">Live Demo</a>
+        <a href="https://youtu.be/EAoNXmUdILg" class="btn btn-outline" target="_blank">Watch Video</a>
+      </div>
     </div>
-  </div>
 
-  <!-- PROJECT 2 -->
-  <div class="section">
-    <h2>Featured Project 2</h2>
-    <h3>Academic &amp; Database Projects</h3>
-    <p>A collection of academic projects covering database management systems, mathematics, and programming fundamentals. Demonstrates skills in SQL, relational schema design, normalization, and algorithmic problem-solving.</p>
-    <div class="buttons">
-      <a href="https://github.com/faizahanif-math/Math---Projects" class="btn" target="_blank">View on GitHub</a>
-      <a href="https://faizahanif-math.github.io/Math---Projects/" class="btn btn-outline" target="_blank">Live Site</a>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Academic &amp; Database Projects</h3>
+      <p>A collection of academic projects covering database management systems, mathematics, and programming fundamentals. Demonstrates skills in SQL, relational schema design, normalization, and algorithmic problem-solving.</p>
+      <div class="tech-stack">
+        <span>SQL</span><span>Database Design</span><span>Math</span>
+      </div>
+      <div class="buttons">
+        <a href="https://github.com/faizahanif-math/Math---Projects" class="btn" target="_blank">View on GitHub</a>
+        <a href="https://faizahanif-math.github.io/Math---Projects/" class="btn btn-outline" target="_blank">Live Site</a>
+      </div>
     </div>
+
   </div>
 
   <!-- CONNECT SECTION -->
-  <div class="section">
+  <div class="section" id="contact">
     <h2>Connect With Me</h2>
-    <p>I'm available for freelance projects and open to collaborations. Feel free to reach out!</p>
-    <div class="buttons">
-      <a href="https://zinnhub.com/store/codefix-by-faiza/" class="btn" target="_blank">Zinn Hub Store</a>
-      <a href="https://www.fiverr.com/users/faizahanif289" class="btn" target="_blank">Fiverr Profile</a>
-      <a href="https://github.com/faizahanif-math" class="btn btn-outline" target="_blank">GitHub Profile</a>
+    <div class="connect-grid">
+      <a href="https://zinnhub.com/store/codefix-by-faiza/" class="btn" target="_blank">Zinn Hub</a>
+      <a href="https://www.fiverr.com/users/faizahanif289" class="btn" target="_blank">Fiverr</a>
+      <a href="https://github.com/faizahanif-math" class="btn btn-outline" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/faiza-hanif-b84561352" class="btn btn-outline" target="_blank">LinkedIn</a>
-      <a href="https://youtu.be/EAoNXmUdILg" class="btn btn-outline" target="_blank">YouTube Demo</a>
+      <a href="mailto:faizahanif192@gmail.com" class="btn btn-outline">Email Me</a>
     </div>
   </div>
 
-  <footer>&copy; 2026 Faiza Hanif. All rights reserved.</footer>
-
 </div>
+
+<footer>
+  &copy; 2026 Faiza Hanif. Built with ❤️
+</footer>
+
 </body>
 </html>
